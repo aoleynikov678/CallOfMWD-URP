@@ -15,7 +15,7 @@ namespace lab.mwd
         {
             SetupCharacterController();
             Move(position, speed);
-            ApplyGravity(gravityMultiplier);
+            //ApplyGravity(gravityMultiplier);
         }
 
         private void SetupCharacterController()
@@ -46,12 +46,9 @@ namespace lab.mwd
             // Rotate the input direction by the horizontal head rotation
             direction = Quaternion.Euler(headRotation) * direction;
 
-            //Debug.Log("head = " + head.name + " headRotation " + headRotation + " angle " + head.transform.eulerAngles.y);
-            //Debug.Log("direction " + direction);
-
             // Apply speed and move
             Vector3 movement = direction * speed;
-            characterController.Move(movement * Time.fixedDeltaTime);
+            characterController.Move(movement * Time.deltaTime);
         }
 
         private void ApplyGravity(float gravityMultiplier)

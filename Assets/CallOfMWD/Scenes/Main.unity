@@ -436,7 +436,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_System: {fileID: 138448595}
-  speed: 1
+  speed: 2
   gravityMultiplier: 1
 --- !u!1 &152538093
 GameObject:
