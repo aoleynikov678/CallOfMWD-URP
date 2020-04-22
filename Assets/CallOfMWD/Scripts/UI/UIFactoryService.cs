@@ -7,7 +7,7 @@ namespace lab.mwd
 {
     public class UIFactoryService : IUIFactoryService
     {
-        private const string uiSceneName = "UI";
+        private const string uiSceneName = "Screen UI";
 
         public GameUI GameUI { get; private set; }
         public event Action OnUILoaded;

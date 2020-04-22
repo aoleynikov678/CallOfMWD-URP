@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/CallOfMWD/Scenes/Main.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
+  - enabled: 1
+    path: Assets/CallOfMWD/Scenes/Screen UI.unity
+    guid: 1aefee54e3b39fa4fad285b8f439386b
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 53d0572e4837dbc49bfd0c85e4e1b515,
       type: 2}
