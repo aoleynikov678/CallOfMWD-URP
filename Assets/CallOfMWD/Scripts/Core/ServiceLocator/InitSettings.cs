@@ -2,7 +2,7 @@
 
 namespace lab.core
 {
-    public class InitSettings : ScriptableObject
+    public class InitSettings<T> : SingletonScriptableObject<T> where T : ScriptableObject
     {
         public AsyncProcessor AsyncProcessor { get; private set; }
 
