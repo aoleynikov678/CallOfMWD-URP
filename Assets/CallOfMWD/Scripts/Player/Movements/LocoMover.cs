@@ -22,6 +22,7 @@ namespace lab.mwd
         {
             // Get the head in local, playspace ground
             float headHeight = Mathf.Clamp(head.transform.localPosition.y, 1, 2);
+
             characterController.height = headHeight;
 
             // Cut in half, add skin
