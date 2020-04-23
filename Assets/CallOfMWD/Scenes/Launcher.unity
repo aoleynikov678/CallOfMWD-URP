@@ -1579,6 +1579,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1849851430}
+  - component: {fileID: 1849851431}
   m_Layer: 5
   m_Name: Rooms List
   m_TagString: Untagged
@@ -1606,6 +1607,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1849851431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849851429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 522273944d7547d297f9ea664e1d471a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contentParent: {fileID: 1676467293}
+  roomEntry: {fileID: -1634367802727061839, guid: 3793c326683ee0d4d905ae63c65ea648,
+    type: 3}
 --- !u!1 &1893686734
 GameObject:
   m_ObjectHideFlags: 0
