@@ -1,4 +1,6 @@
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -8,11 +10,21 @@ namespace lab.mwd
     {
         [SerializeField] private XRRig xrRig;
         private Transform head;
+        private List<Renderer> renderers = new List<Renderer>();
 
         public void SetRig(XRRig rig)
         {
             xrRig = rig;
             head = xrRig.cameraGameObject.transform;
+        }
+
+        public void DisableRendering()
+        {
+            renderers = GetComponentsInChildren<Renderer>().ToList();
+            foreach (var rend in renderers)
+            {
+                rend.enabled = false;
+            }
         }
 
         private void Update()

@@ -30,6 +30,7 @@ namespace lab.mwd
                 DontDestroyOnLoad(xrRig.gameObject);
 
                 avatar.SetRig(xrRig);
+                avatar.DisableRendering();
             }
         }
     }
