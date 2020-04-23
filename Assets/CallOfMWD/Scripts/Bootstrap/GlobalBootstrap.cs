@@ -3,11 +3,9 @@ using UnityEngine;
 
 namespace lab.mwd
 {
-    public class Bootstrap : MonoBehaviour
-    {
-        [SerializeField] private GameSettings gameSettings;
-        
-        private static Bootstrap instance;
+    public class GlobalBootstrap : MonoBehaviour
+    {        
+        private static GlobalBootstrap instance;
         
         private void Awake()
         {
@@ -18,6 +16,8 @@ namespace lab.mwd
 
             instance = this;
             DontDestroyOnLoad(gameObject);
+
+            var gameSettings = Resources.Load<GameSettings>("GameSettings");
             
             ServiceLocator.Create();
 
