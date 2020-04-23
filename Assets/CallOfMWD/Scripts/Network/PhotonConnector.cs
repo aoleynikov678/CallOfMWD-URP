@@ -13,6 +13,7 @@ namespace lab.mwd
         {
             sp = ServiceLocator.Current.Get<ISettingsProvider>();
 
+            PhotonNetwork.AutomaticallySyncScene = true;
             PhotonNetwork.NickName = sp.GameSettings.NetworkSettings.NickName;
             PhotonNetwork.ConnectUsingSettings();
         }
