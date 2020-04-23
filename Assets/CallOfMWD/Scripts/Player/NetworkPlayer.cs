@@ -5,17 +5,16 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 namespace lab.mwd
 {
-    public class LocalPlayer : MonoBehaviourPun
+    public class NetworkPlayer : MonoBehaviourPun
     {
         [SerializeField] private List<GameObject> destroyObjects = new List<GameObject>();
         [SerializeField] private XRRig xrRigPrefab;
+        [SerializeField] private Avatar avatar;
 
         private XRRig xrRig;
-        private static LocalPlayer localPlayer;
         
         private void Awake()
         {
-            localPlayer = this;
             DontDestroyOnLoad(gameObject);
 
             if (PhotonNetwork.IsConnected && photonView.IsMine == false)
@@ -29,6 +28,8 @@ namespace lab.mwd
             {
                 xrRig = Instantiate(xrRigPrefab);
                 DontDestroyOnLoad(xrRig.gameObject);
+
+                avatar.SetRig(xrRig);
             }
         }
     }

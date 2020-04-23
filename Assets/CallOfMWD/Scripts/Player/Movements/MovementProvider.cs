@@ -22,8 +22,6 @@ namespace lab.mwd
         {
             var characterController = GetComponent<CharacterController>();
             var head = GetComponent<XRRig>().cameraGameObject;
-
-            Debug.Log("head " + head.name);
             
             mover.Init(characterController, head);
         }

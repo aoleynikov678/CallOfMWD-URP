@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace lab.mwd
 {
-    public class GameLoader
+    public static class GameLoader
     {
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         public static void Initialize()
