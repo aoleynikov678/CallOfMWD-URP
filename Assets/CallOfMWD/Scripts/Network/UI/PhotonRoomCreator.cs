@@ -31,25 +31,5 @@ namespace lab.mwd
             options.MaxPlayers = 8;
             PhotonNetwork.JoinOrCreateRoom(roomNameText.text, options, TypedLobby.Default);
         }
-
-        public override void OnCreatedRoom()
-        {
-            Debug.Log($"Room created {PhotonNetwork.CurrentRoom.Name}");
-        }
-
-        public override void OnCreateRoomFailed(short returnCode, string message)
-        {
-            Debug.LogError($"Room creation failed {returnCode}: {message}");
-        }
-
-        public override void OnJoinedRoom()
-        {
-            Debug.Log($"Joined room {PhotonNetwork.CurrentRoom.Name}");
-        }
-
-        public override void OnJoinRoomFailed(short returnCode, string message)
-        {
-            Debug.LogError($"Room joining failed {returnCode}: {message}");
-        }
     }
 }

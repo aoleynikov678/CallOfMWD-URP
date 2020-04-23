@@ -23,8 +23,6 @@ namespace lab.mwd
 
             ServiceLocator.Current.Register<ISettingsProvider>(new Settings(gameSettings));
             ServiceLocator.Current.Register<IAsyncProvider>(new Async());
-            
-            //ServiceLocator.Current.Register<IUIFactoryService>(new UIFactoryService());
             ServiceLocator.Current.Register<IPlayerInputService>(new PlayerInputService());
             
             ServiceLocator.Current.Initialize();
