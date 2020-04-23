@@ -12,11 +12,11 @@ namespace lab.mwd
         public GameUI GameUI { get; private set; }
         public event Action OnUILoaded;
         
-        public UIFactoryService(GameSettings gameSettings)
+        public UIFactoryService()
         {
             if (SceneManager.GetSceneByName(uiSceneName).isLoaded == false)
             {
-                gameSettings.AsyncProcessor.StartCoroutine(LoadSceneUI());
+                GameSettings.Instance.AsyncProcessor.StartCoroutine(LoadSceneUI());
             }
         }
         
