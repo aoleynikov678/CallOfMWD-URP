@@ -8,7 +8,7 @@ namespace lab.mwd
     {
         private void Start()
         {
-            Debug.Log("Connecting to master " + GameSettings.NetworkSettings.NickName);
+            Debug.Log("Connecting to master");
 
             PhotonNetwork.NickName = GameSettings.NetworkSettings.NickName;
             PhotonNetwork.ConnectUsingSettings();
@@ -16,7 +16,7 @@ namespace lab.mwd
 
         public override void OnConnectedToMaster()
         {
-            Debug.Log("Connected to master");
+            Debug.Log("Connected to master " + PhotonNetwork.LocalPlayer.NickName);
         }
 
         public override void OnDisconnected(DisconnectCause cause)

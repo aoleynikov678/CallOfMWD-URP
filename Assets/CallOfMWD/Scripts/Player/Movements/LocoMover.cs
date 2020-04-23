@@ -15,7 +15,7 @@ namespace lab.mwd
         {
             SetupCharacterController();
             Move(position, speed);
-            //ApplyGravity(gravityMultiplier);
+            ApplyGravity(gravityMultiplier);
         }
 
         private void SetupCharacterController()
