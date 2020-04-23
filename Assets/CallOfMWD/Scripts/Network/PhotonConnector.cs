@@ -22,7 +22,5 @@ namespace lab.mwd
         {
             PhotonNetwork.JoinLobby();
         }
-
-
     }
 }
