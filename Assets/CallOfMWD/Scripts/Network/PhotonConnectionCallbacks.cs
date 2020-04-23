@@ -27,8 +27,6 @@ namespace lab.mwd
         public override void OnCreatedRoom()
         {
             Debug.Log($"Room created {PhotonNetwork.CurrentRoom.Name}");
-            
-            OnRoomConnected?.Invoke();
         }
 
         public override void OnCreateRoomFailed(short returnCode, string message)

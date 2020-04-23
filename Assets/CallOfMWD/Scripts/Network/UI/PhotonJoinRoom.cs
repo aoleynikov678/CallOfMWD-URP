@@ -9,6 +9,8 @@ namespace lab.mwd
         [SerializeField] private Button button;
         [SerializeField] private RoomEntry roomEntry;
 
+        private bool joining = false;
+
         private void Awake()
         {
             if (button == null)
@@ -31,9 +33,10 @@ namespace lab.mwd
 
         private void JoinRoom()
         {
-            if (!PhotonNetwork.IsConnected)
+            if (!PhotonNetwork.IsConnected || joining)
                 return;
-            
+
+            joining = true;
             PhotonNetwork.JoinRoom(roomEntry.RoomInfo.Name);
         }
     }
