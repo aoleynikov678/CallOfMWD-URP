@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace lab.mwd
 {
-    public class PhotonConnector : MonoBehaviourPunCallbacks
+    public class PhotonMasterConnector : MonoBehaviourPunCallbacks
     {
         private void Start()
         {
@@ -16,7 +16,7 @@ namespace lab.mwd
 
         public override void OnConnectedToMaster()
         {
-            Debug.Log("Connected to master " + PhotonNetwork.LocalPlayer.NickName);
+            Debug.Log($"Connected to master {PhotonNetwork.LocalPlayer.NickName}");
         }
 
         public override void OnDisconnected(DisconnectCause cause)
