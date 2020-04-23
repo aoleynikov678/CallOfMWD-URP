@@ -1,22 +1,25 @@
 ﻿using System;
 using System.Collections;
+using lab.core;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace lab.mwd
 {
-    public class UIFactoryService : IUIFactoryService
+    public class UIFactoryService : IUIFactoryService, IInitializable
     {
         private const string uiSceneName = "Screen UI";
 
         public GameUI GameUI { get; private set; }
         public event Action OnUILoaded;
         
-        public UIFactoryService()
+        public void Initialize()
         {
+            AsyncProcessor async = ServiceLocator.Current.Get<IAsyncProvider>().AsyncProcessor;
+            
             if (SceneManager.GetSceneByName(uiSceneName).isLoaded == false)
             {
-                GameSettings.Instance.AsyncProcessor.StartCoroutine(LoadSceneUI());
+                async.StartCoroutine(LoadSceneUI());
             }
         }
         

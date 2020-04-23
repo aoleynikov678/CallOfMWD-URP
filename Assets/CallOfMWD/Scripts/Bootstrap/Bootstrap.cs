@@ -5,6 +5,8 @@ namespace lab.mwd
 {
     public class Bootstrap : MonoBehaviour
     {
+        [SerializeField] private GameSettings gameSettings;
+        
         private static Bootstrap instance;
         
         private void Awake()
@@ -16,11 +18,12 @@ namespace lab.mwd
 
             instance = this;
             DontDestroyOnLoad(gameObject);
-
-            GameSettings.Instance.SetAsyncProcessor(gameObject.AddComponent<AsyncProcessor>());
             
             ServiceLocator.Create();
 
+            ServiceLocator.Current.Register<ISettingsProvider>(new Settings(gameSettings));
+            ServiceLocator.Current.Register<IAsyncProvider>(new Async());
+            
             ServiceLocator.Current.Register<IPlayerService>(new PlayerService());
             ServiceLocator.Current.Register<IUIFactoryService>(new UIFactoryService());
             ServiceLocator.Current.Register<IPlayerInputService>(new PlayerInputService());

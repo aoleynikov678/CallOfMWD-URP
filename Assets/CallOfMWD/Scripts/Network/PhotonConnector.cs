@@ -1,3 +1,4 @@
+using lab.core;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
@@ -6,11 +7,15 @@ namespace lab.mwd
 {
     public class PhotonConnector : MonoBehaviourPunCallbacks
     {
+        private ISettingsProvider sp;
+        
         private void Start()
         {
             Debug.Log("Connecting to master");
 
-            PhotonNetwork.NickName = GameSettings.NetworkSettings.NickName;
+            sp = ServiceLocator.Current.Get<ISettingsProvider>();
+
+            PhotonNetwork.NickName = sp.GameSettings.NetworkSettings.NickName;
             PhotonNetwork.ConnectUsingSettings();
         }
 
