@@ -21,7 +21,7 @@ namespace lab.mwd
                 return;
 
             transform.position = head.position;
-            transform.rotation = Quaternion.Euler(0, head.transform.position.y, 0);
+            transform.rotation = Quaternion.Euler(0, head.transform.rotation.eulerAngles.y, 0);
         }
     }
 }
