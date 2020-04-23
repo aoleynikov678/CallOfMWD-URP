@@ -9,7 +9,7 @@ namespace lab.mwd
     {
         [SerializeField] private NetworkSettings networkSettings;
 
-        public NetworkSettings NetworkSettings => networkSettings;
+        public static NetworkSettings NetworkSettings => Instance.networkSettings;
 
         // TODO move it
         public List<LevelReference> levels = new List<LevelReference>();

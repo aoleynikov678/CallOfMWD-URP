@@ -8,8 +8,9 @@ namespace lab.mwd
     {
         private void Start()
         {
-            Debug.Log("Connecting to master " + GameSettings.Instance.NetworkSettings.NickName);
-            
+            Debug.Log("Connecting to master " + GameSettings.NetworkSettings.NickName);
+
+            PhotonNetwork.NickName = GameSettings.NetworkSettings.NickName;
             PhotonNetwork.ConnectUsingSettings();
         }
 
