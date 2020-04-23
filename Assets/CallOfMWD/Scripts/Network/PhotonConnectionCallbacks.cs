@@ -1,11 +1,14 @@
+using System;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
 
 namespace lab.mwd
 {
-    public class PhotonDebugCallbacks : MonoBehaviourPunCallbacks
+    public class PhotonConnectionCallbacks : MonoBehaviourPunCallbacks, IRoomConnector
     {
+        public event Action OnRoomConnected;
+        
         public override void OnConnectedToMaster()
         {
             Debug.Log($"Connected to master {PhotonNetwork.LocalPlayer.NickName}");
@@ -24,6 +27,8 @@ namespace lab.mwd
         public override void OnCreatedRoom()
         {
             Debug.Log($"Room created {PhotonNetwork.CurrentRoom.Name}");
+            
+            OnRoomConnected?.Invoke();
         }
 
         public override void OnCreateRoomFailed(short returnCode, string message)
@@ -34,11 +39,14 @@ namespace lab.mwd
         public override void OnJoinedRoom()
         {
             Debug.Log($"Joined room {PhotonNetwork.CurrentRoom.Name}");
+            
+            OnRoomConnected?.Invoke();
         }
 
         public override void OnJoinRoomFailed(short returnCode, string message)
         {
             Debug.LogError($"Room joining failed {returnCode}: {message}");
         }
+        
     }
 }

@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -548,7 +548,7 @@ GameObject:
   - component: {fileID: 227568333}
   - component: {fileID: 227568332}
   m_Layer: 5
-  m_Name: Canvas Rooms
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1637,6 +1637,7 @@ GameObject:
   - component: {fileID: 1893686735}
   - component: {fileID: 1893686736}
   - component: {fileID: 1893686737}
+  - component: {fileID: 1893686738}
   m_Layer: 0
   m_Name: Network Connection
   m_TagString: Untagged
@@ -1682,6 +1683,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 582f28b385df4500a0975a9149ec6212, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1893686738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893686734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de6f538871434c9f947fef81669f695f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelToLoad:
+    levelAsset: {fileID: 102900000, guid: d1c3109bdb54ad54c8a2b2838528e640, type: 3}
+    levelPath: Assets/CallOfMWD/Scenes/Main.unity
 --- !u!1 &1909217611
 GameObject:
   m_ObjectHideFlags: 0
