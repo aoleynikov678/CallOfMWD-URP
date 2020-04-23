@@ -1269,8 +1269,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1897949760}
   - component: {fileID: 1897949761}
-  - component: {fileID: 1897949762}
   - component: {fileID: 1897949763}
+  - component: {fileID: 1897949762}
   m_Layer: 0
   m_Name: Level
   m_TagString: Untagged
@@ -1332,6 +1332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 349490ea04b3455385a5e0f8b9df3474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelName: Test
 --- !u!1 &1904166338
 GameObject:
   m_ObjectHideFlags: 0

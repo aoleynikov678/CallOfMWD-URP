@@ -16,6 +16,7 @@ namespace lab.mwd
             {
                 PhotonNetwork.Instantiate(playerName, Vector3.zero, Quaternion.identity);
             }
+            
         }
     }
 }

@@ -182,3 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ddef00753654f56883f8c10614ccc3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyObjects:
+  - {fileID: 1845124716823988253}
+  xrRigPrefab: {fileID: 8535953838878831526, guid: 4041c6a718eeb854c958fc9bb30f70e8,
+    type: 3}

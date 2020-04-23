@@ -4,18 +4,20 @@ namespace lab.mwd
 {
     public class UICamera : MonoBehaviour
     {
-        private static UICamera Instance;
+        private static UICamera instance;
 
         private void Awake()
         {
-            if (Instance != null)
+            if (instance == null)
+            {
+                instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
             {
                 Destroy(gameObject);
-            }
-
-            Instance = this;
+            }    
             
-            DontDestroyOnLoad(gameObject);
         }
     }
 }

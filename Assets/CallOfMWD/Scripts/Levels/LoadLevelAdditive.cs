@@ -19,7 +19,7 @@ namespace lab.mwd
             {
                 yield return null;
             }
-            
+
             OnLevelLoaded?.Invoke();
         }
     }

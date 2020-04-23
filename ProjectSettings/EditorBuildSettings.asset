@@ -13,7 +13,7 @@ EditorBuildSettings:
     guid: d1c3109bdb54ad54c8a2b2838528e640
   - enabled: 1
     path: Assets/CallOfMWD/Scenes/Test.unity
-    guid: ac6e73847adf06949bda0dfac6933092
+    guid: 86e32f7cd0130034cb6362d103af24cc
   - enabled: 1
     path: Assets/CallOfMWD/Scenes/Screen UI.unity
     guid: 1aefee54e3b39fa4fad285b8f439386b
