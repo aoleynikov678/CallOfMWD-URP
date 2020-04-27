@@ -28,9 +28,7 @@ namespace lab.mwd
             {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    //.LoadLevel(levelName);
                     networkEventsBus.Fire(new OnChangeLevel(levelName, true));
-
                     SceneManager.LoadScene(levelName);
                 }
             }

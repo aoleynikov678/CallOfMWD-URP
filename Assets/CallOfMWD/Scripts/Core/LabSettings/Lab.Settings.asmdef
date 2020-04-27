@@ -1,0 +1,14 @@
+{
+    "name": "Lab.Settings",
+    "references": [
+        "GUID:69379ff3ce9175d4c98ace861ab042d2"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": []
+}
