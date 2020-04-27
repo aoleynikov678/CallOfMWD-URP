@@ -1,6 +1,7 @@
 using lab.core;
 using Photon.Pun;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace lab.mwd
 {
@@ -18,7 +19,7 @@ namespace lab.mwd
 
         private void OnDestroy()
         {
-//            eventsReceiverService.OnChangeLevel -= OnChangeLevel;
+            networkEventsBus.RemoveListener<OnChangeLevel>(OnChangeLevel);
         }
 
         private void Update()
@@ -29,6 +30,8 @@ namespace lab.mwd
                 {
                     //.LoadLevel(levelName);
                     networkEventsBus.Fire(new OnChangeLevel(levelName, true));
+
+                    SceneManager.LoadScene(levelName);
                 }
             }
         }
@@ -36,6 +39,8 @@ namespace lab.mwd
         private void OnChangeLevel(OnChangeLevel onChangeLevel)
         {
             Debug.Log($"Received level change {onChangeLevel.LevelPath}");
+            
+            SceneManager.LoadScene(levelName);
         }
     }
 }
