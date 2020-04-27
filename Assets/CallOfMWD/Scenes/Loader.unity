@@ -130,7 +130,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 12497395}
-  - component: {fileID: 12497396}
   m_Layer: 5
   m_Name: Create Room
   m_TagString: Untagged
@@ -159,20 +158,6 @@ RectTransform:
   m_AnchoredPosition: {x: 250, y: 0}
   m_SizeDelta: {x: 350, y: 250}
   m_Pivot: {x: 0, y: 0.5}
---- !u!114 &12497396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 12497394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9aded139f55347928e414b48d4a54862, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  createButton: {fileID: 144260635}
-  roomNameText: {fileID: 734784021}
 --- !u!1 &19186988
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,6 +457,7 @@ GameObject:
   - component: {fileID: 144260637}
   - component: {fileID: 144260636}
   - component: {fileID: 144260635}
+  - component: {fileID: 144260638}
   m_Layer: 5
   m_Name: Create Room Button
   m_TagString: Untagged
@@ -578,6 +564,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 144260633}
   m_CullTransparentMesh: 0
+--- !u!114 &144260638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144260633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2df11154599c76148b530987879a59ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  createButton: {fileID: 144260635}
+  roomNameText: {fileID: 734784021}
 --- !u!1 &153602204
 GameObject:
   m_ObjectHideFlags: 0
@@ -3513,9 +3513,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 522273944d7547d297f9ea664e1d471a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contentParent: {fileID: 1676467293}
-  roomEntry: {fileID: -1634367802727061839, guid: 3793c326683ee0d4d905ae63c65ea648,
-    type: 3}
 --- !u!1 &1893686734
 GameObject:
   m_ObjectHideFlags: 0
@@ -3582,7 +3579,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1893686734}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de6f538871434c9f947fef81669f695f, type: 3}
+  m_Script: {fileID: 11500000, guid: 191bad2c0bb64814a8e46febbc6d75f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   levelToLoad:

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace lab.mwd
 {
-    public class PhotonRoomCreator : MonoBehaviourPunCallbacks
+    public class PhotonCreateRoomButton : MonoBehaviourPunCallbacks
     {
         [SerializeField] private Button createButton;
         [SerializeField] private TMP_Text roomNameText;

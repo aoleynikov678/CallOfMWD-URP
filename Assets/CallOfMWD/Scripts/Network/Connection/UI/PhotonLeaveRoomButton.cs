@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace lab.mwd
 {
-    public class PhotonLeaveRoom : MonoBehaviour
+    public class PhotonLeaveRoomButton : MonoBehaviour
     {
         [SerializeField] private Button button;
 

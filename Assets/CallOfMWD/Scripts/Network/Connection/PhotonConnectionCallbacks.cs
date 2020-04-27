@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace lab.mwd
 {
-    public class PhotonConnectionCallbacks : MonoBehaviourPunCallbacks, IRoomConnector
+    public class PhotonConnectionCallbacks : MonoBehaviourPunCallbacks
     {
         public event Action OnRoomConnected;
         public event Action OnRoomDisconnected;

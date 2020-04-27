@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace lab.mwd
 {
-    public class PhotonJoinRoom : MonoBehaviourPunCallbacks
+    public class PhotonJoinRoomButton : MonoBehaviourPunCallbacks
     {
         [SerializeField] private Button button;
         [SerializeField] private RoomEntry roomEntry;

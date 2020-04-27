@@ -5,15 +5,15 @@ using UnityEngine.SceneManagement;
 
 namespace lab.mwd
 {
-    public class PhotonLoadLevel : MonoBehaviour
+    public class PhotonLevelManager : MonoBehaviour
     {
         [SerializeField] private LevelReference levelToLoad;
         
-        private IRoomConnector roomConnector;
+        private PhotonConnectionCallbacks roomConnector;
 
         private void Awake()
         {           
-            roomConnector = GetComponent<IRoomConnector>();
+            roomConnector = GetComponent<PhotonConnectionCallbacks>();
 
             if (roomConnector == null)
             {
