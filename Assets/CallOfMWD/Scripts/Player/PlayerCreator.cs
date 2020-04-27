@@ -18,7 +18,6 @@ namespace lab.mwd
 
             if (networkPlayer == null)
             {
-                Debug.Log("---Instantiate local---");
                 PhotonNetwork.Instantiate(playerName, Vector3.zero, Quaternion.identity);
             }
             

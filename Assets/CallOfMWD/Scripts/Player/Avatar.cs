@@ -29,7 +29,7 @@ namespace lab.mwd
 
         private void Update()
         {
-            if (head == null)
+            if (!head)
                 return;
 
             transform.position = head.position;

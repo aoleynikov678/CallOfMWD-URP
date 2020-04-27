@@ -6,7 +6,7 @@ using IDisposable = System.IDisposable;
 namespace lab.mwd
 {
     [AutoDispose(typeof(Action))]
-    public class PlayerInputService : IPlayerInputService, IDisposable, ITickable
+    public class PlayerInputService : IPlayerInputService, ITickable, IDisposable
     {
         private readonly PlayerInputActions playerInputActions;
         public Vector2 Move { get; private set; }

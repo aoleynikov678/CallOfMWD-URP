@@ -1,3 +1,4 @@
+using lab.core;
 using Photon.Pun;
 using UnityEngine;
 
@@ -9,8 +10,9 @@ namespace lab.mwd
         
         private IRoomConnector roomConnector;
 
+
         private void Awake()
-        {
+        {           
             roomConnector = GetComponent<IRoomConnector>();
 
             if (roomConnector == null)
@@ -34,5 +36,7 @@ namespace lab.mwd
         {
             PhotonNetwork.LoadLevel(levelToLoad.LevelPath);
         }
+        
+
     }
 }
