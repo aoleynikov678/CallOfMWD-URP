@@ -23,13 +23,12 @@ namespace lab.mwd
 
             ServiceLocator.Current.Register<ISettingsProvider>(new Settings(gameSettings));
             ServiceLocator.Current.Register<IAsyncProvider>(new Async());
+            
             ServiceLocator.Current.Register<IPlayerInputService>(new PlayerInputService());
             ServiceLocator.Current.Register(new NetworkEventsBus());
             ServiceLocator.Current.Register<IEventsSenderService>(new EventsSenderService());
             ServiceLocator.Current.Register<IEventsReceiverService>(new EventsReceiverService());
 
-            
-            
             ServiceLocator.Current.Initialize();
         }
 

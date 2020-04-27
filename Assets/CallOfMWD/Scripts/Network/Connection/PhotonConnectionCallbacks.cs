@@ -5,10 +5,11 @@ using UnityEngine;
 
 namespace lab.mwd
 {
-    public class PhotonConnectionCallbacks : MonoBehaviourPunCallbacks, IRoomConnector
+    public class PhotonConnectionCallbacks : MonoBehaviourPunCallbacks
     {
         public event Action OnRoomConnected;
-        
+        public event Action OnRoomDisconnected;
+
         public override void OnConnectedToMaster()
         {
             Debug.Log($"Connected to master {PhotonNetwork.LocalPlayer.NickName}");
@@ -45,6 +46,17 @@ namespace lab.mwd
         {
             Debug.LogError($"Room joining failed {returnCode}: {message}");
         }
-        
+
+        public override void OnPlayerEnteredRoom(Player newPlayer)
+        {
+            string role = newPlayer.CustomProperties[PhotonProperties.CustomProp(RoomProperty.NetworkRole)].ToString();
+            Debug.LogError($"New player joined room {newPlayer} with role {role}");
+        }
+
+        public override void OnLeftRoom()
+        {
+            OnRoomDisconnected?.Invoke();
+            Debug.Log($"Left room");
+        }
     }
 }

@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5673221561218268662
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5673221561218268661}
+  - component: {fileID: 5673221561218268660}
+  m_Layer: 0
+  m_Name: UI Generator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5673221561218268661
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5673221561218268662}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.43563563, y: -0.35782623, z: -0.36629897}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5673221561218268660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5673221561218268662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37b0e635812141d58246a3e95f662b98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fieldsOwners: []
+  uiGeneratorSettings:
+    SettingsPanel: {fileID: 6247453181583943355, guid: 2a3a5e3d05392d5448f63a15521d23d9,
+      type: 3}
+    SelectorPrefab: {fileID: -8175800873895121166, guid: 36833b3729bd10f48a18f2e9ce0c1685,
+      type: 3}
+    CheckboxPrefab: {fileID: 7813826446064549407, guid: 7f61cf4521b554e449564a766fbb20a6,
+      type: 3}
+    SliderPrefab: {fileID: 5783689738624716059, guid: 212a0f8a1a96e9348951eb500458d6ab,
+      type: 3}
+    InputPrefab: {fileID: -5409763116022229328, guid: bfa4a6dcd223c0b4ca1d0c83d07c6462,
+      type: 3}
+    SaveButton: {fileID: 6496174151038510350, guid: 7d116ba91bbb10f4183330ea6443a893,
+      type: 3}
+    Space: {fileID: 1867176103089376989, guid: af928f3a9937b4c44b26f3f261e37b9a, type: 3}
+    CreatedPanel: {fileID: 0}
+    UIParent: {fileID: 0}
+  uiParent: {fileID: 0}
+  emptyElementType: 0
