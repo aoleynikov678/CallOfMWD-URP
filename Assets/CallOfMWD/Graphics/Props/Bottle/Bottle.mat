@@ -242,12 +242,12 @@ Material:
     - _HeightTessAmplitude: 2
     - _HeightTessCenter: 0.5
     - _Help: 0
-    - _IOR: 1.33
+    - _IOR: 0.76
     - _InvTilingScale: 1
     - _Ior: 1.032
     - _IridescenceMask: 1
     - _IridescenceThickness: 1
-    - _IsThinShell: 0
+    - _IsThinShell: 0.16
     - _LightingEnabled: 1
     - _LinkDetailsWithBase: 1
     - _MaterialID: 1
@@ -276,7 +276,7 @@ Material:
     - _ScreenEdgeFade: 8
     - _Shadows: 0
     - _Smoothness: 1
-    - _SmoothnessBase: 0.5
+    - _SmoothnessBase: 0.529
     - _SmoothnessRemapMax: 1
     - _SmoothnessRemapMin: 0
     - _SmoothnessTextureChannel: 0
@@ -344,7 +344,7 @@ Material:
     - _IridescenceThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
     - _RimColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
-    - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColorBase: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _ThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
