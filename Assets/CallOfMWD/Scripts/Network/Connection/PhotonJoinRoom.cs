@@ -1,3 +1,4 @@
+using lab.core;
 using Photon.Pun;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,9 +11,12 @@ namespace lab.mwd
         [SerializeField] private RoomEntry roomEntry;
 
         private bool joining = false;
+        private ISettingsProvider settingsProvider;
 
         private void Awake()
         {
+            settingsProvider = ServiceLocator.Current.Get<ISettingsProvider>();
+            
             if (button == null)
             {
                 button = GetComponent<Button>();
@@ -36,8 +40,21 @@ namespace lab.mwd
             if (!PhotonNetwork.IsConnected || joining)
                 return;
 
+            SetRole();
             joining = true;
             PhotonNetwork.JoinRoom(roomEntry.RoomInfo.Name);
+        }
+        
+        private void SetRole()
+        {
+            var customProperties = new ExitGames.Client.Photon.Hashtable
+            {
+                {
+                    PhotonProperties.CustomProp(RoomProperty.NetworkRole),
+                    settingsProvider.GameSettings.NetworkSettings.NetworkRole.ToString()
+                }
+            };
+            PhotonNetwork.SetPlayerCustomProperties(customProperties);
         }
     }
 }

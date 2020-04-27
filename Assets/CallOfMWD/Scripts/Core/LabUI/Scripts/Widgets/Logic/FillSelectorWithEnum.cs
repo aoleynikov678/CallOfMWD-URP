@@ -62,6 +62,7 @@ namespace lab.ui
             //selector.Ready = true;
         }
 		
+        // TODO Add Descriptions!
         private string GetEnumDescription(Enum value)
         {
             Debug.Log("GetEnumDescription " + value);

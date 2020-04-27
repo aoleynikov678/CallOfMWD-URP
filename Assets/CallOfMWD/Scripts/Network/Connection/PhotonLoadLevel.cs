@@ -1,6 +1,7 @@
 using lab.core;
 using Photon.Pun;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace lab.mwd
 {
@@ -9,7 +10,6 @@ namespace lab.mwd
         [SerializeField] private LevelReference levelToLoad;
         
         private IRoomConnector roomConnector;
-
 
         private void Awake()
         {           
@@ -22,6 +22,7 @@ namespace lab.mwd
             }
             
             roomConnector.OnRoomConnected += OnRoomConnected;
+            roomConnector.OnRoomDisconnected += OnRoomDisconnected;
         }
 
         private void OnDestroy()
@@ -29,12 +30,18 @@ namespace lab.mwd
             if (roomConnector != null)
             {
                 roomConnector.OnRoomConnected -= OnRoomConnected;
+                roomConnector.OnRoomDisconnected -= OnRoomDisconnected;
             }
         }
 
         private void OnRoomConnected()
         {
             PhotonNetwork.LoadLevel(levelToLoad.LevelPath);
+        }
+        
+        private void OnRoomDisconnected()
+        {
+            SceneManager.LoadScene(0);
         }
         
 
