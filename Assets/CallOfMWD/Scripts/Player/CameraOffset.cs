@@ -4,23 +4,27 @@ namespace lab.mwd
 {
     public class CameraOffset : MonoBehaviour
     {
+        [SerializeField] private Vector3 rotationMask;
+        [SerializeField] private Transform rotateTarget;
+        [SerializeField] private float rotationSpeed;
+        
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.DownArrow))
+            if (Input.GetKey(KeyCode.DownArrow))
             {
-                transform.position -= new Vector3(0, 0.1f, 0);
+                transform.position -= new Vector3(0, 0.05f, 0);
             }
-            else if (Input.GetKeyDown(KeyCode.UpArrow))
+            else if (Input.GetKey(KeyCode.UpArrow))
             {
-                transform.position += new Vector3(0, 0.1f, 0);
+                transform.position += new Vector3(0, 0.05f, 0);
             }
-            else if (Input.GetKeyDown(KeyCode.LeftArrow))
+            else if (Input.GetKey(KeyCode.LeftArrow))
             {
-                transform.Rotate(new Vector3(0, -10, 0));
+                transform.RotateAround(rotateTarget.transform.position, rotationMask, -rotationSpeed * Time.deltaTime);
             }
-            else if (Input.GetKeyDown(KeyCode.RightArrow))
+            else if (Input.GetKey(KeyCode.RightArrow))
             {
-                transform.Rotate(new Vector3(0, 10, 0));
+                transform.RotateAround(rotateTarget.transform.position, rotationMask, rotationSpeed * Time.deltaTime);
             }
         }
     }

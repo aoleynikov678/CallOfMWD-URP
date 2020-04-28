@@ -109,6 +109,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4194019205243399176}
+  - component: {fileID: 4525746689428669079}
   m_Layer: 10
   m_Name: 'Camera Offset '
   m_TagString: Untagged
@@ -133,6 +134,21 @@ Transform:
   m_Father: {fileID: 4194019205229963575}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4525746689428669079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4194019205243399179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5db9c9ce84bb0a44794600ce82916583, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationMask: {x: 0, y: 1, z: 0}
+  rotateTarget: {fileID: 4194019206604959952}
+  rotationSpeed: 100
 --- !u!1 &4194019205464324547
 GameObject:
   m_ObjectHideFlags: 0
@@ -819,7 +835,6 @@ GameObject:
   - component: {fileID: 4194019206604959955}
   - component: {fileID: 4194019206604959954}
   - component: {fileID: 1263304318150160962}
-  - component: {fileID: 4954168410094505885}
   m_Layer: 10
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -933,15 +948,3 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!114 &4954168410094505885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4194019206604959957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5db9c9ce84bb0a44794600ce82916583, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
