@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 3437703130034193494}
   - component: {fileID: 3437703130034193498}
   - component: {fileID: 3437703130034193493}
-  - component: {fileID: 7920886473055792516}
+  - component: {fileID: 5469667972588814475}
+  - component: {fileID: 8032000818749066555}
   m_Layer: 8
   m_Name: Knife
   m_TagString: Untagged
@@ -100,7 +101,18 @@ MonoBehaviour:
   m_OnSelectEnter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7920886473055792516}
+      - m_Target: {fileID: 8032000818749066555}
+        m_MethodName: OnInteract
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5469667972588814475}
         m_MethodName: OnInteract
         m_Mode: 0
         m_Arguments:
@@ -113,7 +125,18 @@ MonoBehaviour:
         m_CallState: 2
   m_OnSelectExit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5469667972588814475}
+        m_MethodName: OnInteractFinish
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnActivate:
     m_PersistentCalls:
       m_Calls: []
@@ -191,7 +214,7 @@ MonoBehaviour:
   m_SynchronizeAngularVelocity: 1
   m_TeleportEnabled: 0
   m_TeleportIfDistanceGreaterThan: 3
---- !u!114 &7920886473055792516
+--- !u!114 &5469667972588814475
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -200,7 +223,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 3437703130034193488}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad6d95aebeabf7440a6dcbcd383499f9, type: 3}
+  m_Script: {fileID: 11500000, guid: abcbd227a8db27a418a6e7b8bf152efd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8032000818749066555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3437703130034193488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16c07f8b15267594e8b4f9f9198ca29a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &3437703128106044495

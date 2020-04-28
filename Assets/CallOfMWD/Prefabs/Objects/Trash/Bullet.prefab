@@ -15,8 +15,9 @@ GameObject:
   - component: {fileID: 1981927049707834959}
   - component: {fileID: 1981927049707834952}
   - component: {fileID: 1981927049707834953}
-  - component: {fileID: -2526682904745757420}
   - component: {fileID: 4701439962114661897}
+  - component: {fileID: 1436742978510409036}
+  - component: {fileID: 5434883581280912576}
   m_Layer: 8
   m_Name: Bullet
   m_TagString: Untagged
@@ -152,18 +153,6 @@ MonoBehaviour:
   m_SynchronizeAngularVelocity: 1
   m_TeleportEnabled: 0
   m_TeleportIfDistanceGreaterThan: 3
---- !u!114 &-2526682904745757420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7539260181685573453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad6d95aebeabf7440a6dcbcd383499f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4701439962114661897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,7 +185,18 @@ MonoBehaviour:
   m_OnSelectEnter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -2526682904745757420}
+      - m_Target: {fileID: 5434883581280912576}
+        m_MethodName: OnInteract
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1436742978510409036}
         m_MethodName: OnInteract
         m_Mode: 0
         m_Arguments:
@@ -209,7 +209,18 @@ MonoBehaviour:
         m_CallState: 2
   m_OnSelectExit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1436742978510409036}
+        m_MethodName: OnInteractFinish
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnActivate:
     m_PersistentCalls:
       m_Calls: []
@@ -249,3 +260,27 @@ MonoBehaviour:
   m_ThrowAngularVelocityScale: 0.25
   m_GravityOnDetach: 0
   m_RetainTransformParent: 1
+--- !u!114 &1436742978510409036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7539260181685573453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abcbd227a8db27a418a6e7b8bf152efd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5434883581280912576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7539260181685573453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16c07f8b15267594e8b4f9f9198ca29a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

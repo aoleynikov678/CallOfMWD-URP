@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 2106800977166584490}
   - component: {fileID: 2106800977166584494}
   - component: {fileID: 2106800977166584495}
-  - component: {fileID: 7191740296964841919}
+  - component: {fileID: 5995581205209660636}
+  - component: {fileID: 5410438649504611295}
   m_Layer: 8
   m_Name: Bottle
   m_TagString: Untagged
@@ -102,7 +103,18 @@ MonoBehaviour:
   m_OnSelectEnter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7191740296964841919}
+      - m_Target: {fileID: 5995581205209660636}
+        m_MethodName: OnInteract
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5410438649504611295}
         m_MethodName: OnInteract
         m_Mode: 0
         m_Arguments:
@@ -115,7 +127,18 @@ MonoBehaviour:
         m_CallState: 2
   m_OnSelectExit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5410438649504611295}
+        m_MethodName: OnInteractFinish
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnActivate:
     m_PersistentCalls:
       m_Calls: []
@@ -193,7 +216,7 @@ MonoBehaviour:
   m_SynchronizeAngularVelocity: 1
   m_TeleportEnabled: 0
   m_TeleportIfDistanceGreaterThan: 3
---- !u!114 &7191740296964841919
+--- !u!114 &5995581205209660636
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -202,7 +225,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 2106800977166584488}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad6d95aebeabf7440a6dcbcd383499f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 16c07f8b15267594e8b4f9f9198ca29a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5410438649504611295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106800977166584488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abcbd227a8db27a418a6e7b8bf152efd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2106800977547063918

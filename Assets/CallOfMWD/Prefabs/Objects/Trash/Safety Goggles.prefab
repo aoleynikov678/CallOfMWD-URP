@@ -16,7 +16,8 @@ GameObject:
   - component: {fileID: 1536300333740589289}
   - component: {fileID: 1536300333740589291}
   - component: {fileID: 1536300333740589290}
-  - component: {fileID: 931724367133749574}
+  - component: {fileID: 1186776946500990422}
+  - component: {fileID: 1063936428203098754}
   m_Layer: 8
   m_Name: Safety Goggles
   m_TagString: Untagged
@@ -150,7 +151,18 @@ MonoBehaviour:
   m_OnSelectEnter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 931724367133749574}
+      - m_Target: {fileID: 1063936428203098754}
+        m_MethodName: OnInteract
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1186776946500990422}
         m_MethodName: OnInteract
         m_Mode: 0
         m_Arguments:
@@ -163,7 +175,18 @@ MonoBehaviour:
         m_CallState: 2
   m_OnSelectExit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1186776946500990422}
+        m_MethodName: OnInteractFinish
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnActivate:
     m_PersistentCalls:
       m_Calls: []
@@ -241,7 +264,7 @@ MonoBehaviour:
   m_SynchronizeAngularVelocity: 1
   m_TeleportEnabled: 0
   m_TeleportIfDistanceGreaterThan: 3
---- !u!114 &931724367133749574
+--- !u!114 &1186776946500990422
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -250,6 +273,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1536300333740589295}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad6d95aebeabf7440a6dcbcd383499f9, type: 3}
+  m_Script: {fileID: 11500000, guid: abcbd227a8db27a418a6e7b8bf152efd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1063936428203098754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536300333740589295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16c07f8b15267594e8b4f9f9198ca29a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
