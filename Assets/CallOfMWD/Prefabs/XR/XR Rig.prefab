@@ -109,7 +109,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4194019205243399176}
-  - component: {fileID: 4525746689428669079}
+  - component: {fileID: 4510178302734259715}
   m_Layer: 10
   m_Name: 'Camera Offset '
   m_TagString: Untagged
@@ -134,7 +134,7 @@ Transform:
   m_Father: {fileID: 4194019205229963575}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4525746689428669079
+--- !u!114 &4510178302734259715
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,6 +149,7 @@ MonoBehaviour:
   rotationMask: {x: 0, y: 1, z: 0}
   rotateTarget: {fileID: 4194019206604959952}
   rotationSpeed: 100
+  tilt: 90
 --- !u!1 &4194019205464324547
 GameObject:
   m_ObjectHideFlags: 0

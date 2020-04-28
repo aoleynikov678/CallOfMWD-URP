@@ -3,49 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace lab.ui
 {
-    public class UIFieldData
-    {
-        public UIParamAttribute UIAttribute;
-        public FieldInfo FieldInfo;
-        public UnityEngine.Object FieldSource;
-
-        public UIFieldData(UIParamAttribute uiAttribute, FieldInfo fieldInfo, UnityEngine.Object fieldSource)
-        {
-            UIAttribute = uiAttribute;
-            FieldInfo = fieldInfo;
-            FieldSource = fieldSource;
-        }
-    }
-
-    [Serializable]
-    public class UIGeneratorSettings
-    {
-        [Header("Фоновая панель")]
-        public LabUIPanel SettingsPanel;
-        
-        [Header("Префабы элементов UI")]
-        public LabUISelector SelectorPrefab;
-        public LabUICheckbox CheckboxPrefab;
-        public LabUISlider SliderPrefab;
-        public LabUIInput InputPrefab;
-
-        [Header("Кнопка сохранения")]
-        public Button SaveButton;
-
-        [Header("Разделитель")] 
-        public GameObject Space;
-
-        [HideInInspector]
-        public LabUIPanel CreatedPanel;
-
-        [HideInInspector] 
-        public Transform UIParent;
-    }
-    
     [ExecuteInEditMode]
     public class LabUIGenerator : MonoBehaviour
     {

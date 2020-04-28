@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/CallOfMWD/Settings/Game/Input/Player Input Actions.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/CallOfMWD/Settings/Game/Input/PlayerInputActions.inputactions'
 
 using System;
 using System.Collections;
@@ -12,7 +12,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
     public @PlayerInputActions()
     {
         asset = InputActionAsset.FromJson(@"{
-    ""name"": ""Player Input Actions"",
+    ""name"": ""PlayerInputActions"",
     ""maps"": [
         {
             ""name"": ""PlayerControls"",
@@ -30,6 +30,14 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""name"": ""Move"",
                     ""type"": ""PassThrough"",
                     ""id"": ""4be4c535-7d13-4594-9021-3162d8c507bb"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""VericalMove"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""72ffbb62-42d3-4cc9-bd39-ebd912c74669"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -178,6 +186,61 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""action"": ""MovePress"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""f82a165e-6184-4802-8da3-8e8207e48332"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""VericalMove"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""0d288995-571a-4181-b8a7-7e250edc7e78"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""VericalMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""1a53b76a-482a-46f9-9586-81216fdf728d"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""VericalMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""3149aaa2-90fd-4a3a-9960-e10ff41f59db"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""VericalMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""62a3e071-5d23-4c9b-a75b-6470a4eae366"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""VericalMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -188,6 +251,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         m_PlayerControls = asset.FindActionMap("PlayerControls", throwIfNotFound: true);
         m_PlayerControls_MovePress = m_PlayerControls.FindAction("MovePress", throwIfNotFound: true);
         m_PlayerControls_Move = m_PlayerControls.FindAction("Move", throwIfNotFound: true);
+        m_PlayerControls_VericalMove = m_PlayerControls.FindAction("VericalMove", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -239,12 +303,14 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
     private IPlayerControlsActions m_PlayerControlsActionsCallbackInterface;
     private readonly InputAction m_PlayerControls_MovePress;
     private readonly InputAction m_PlayerControls_Move;
+    private readonly InputAction m_PlayerControls_VericalMove;
     public struct PlayerControlsActions
     {
         private @PlayerInputActions m_Wrapper;
         public PlayerControlsActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @MovePress => m_Wrapper.m_PlayerControls_MovePress;
         public InputAction @Move => m_Wrapper.m_PlayerControls_Move;
+        public InputAction @VericalMove => m_Wrapper.m_PlayerControls_VericalMove;
         public InputActionMap Get() { return m_Wrapper.m_PlayerControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -260,6 +326,9 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 @Move.started -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnMove;
                 @Move.performed -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnMove;
                 @Move.canceled -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnMove;
+                @VericalMove.started -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnVericalMove;
+                @VericalMove.performed -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnVericalMove;
+                @VericalMove.canceled -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnVericalMove;
             }
             m_Wrapper.m_PlayerControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -270,6 +339,9 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
+                @VericalMove.started += instance.OnVericalMove;
+                @VericalMove.performed += instance.OnVericalMove;
+                @VericalMove.canceled += instance.OnVericalMove;
             }
         }
     }
@@ -278,5 +350,6 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
     {
         void OnMovePress(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
+        void OnVericalMove(InputAction.CallbackContext context);
     }
 }

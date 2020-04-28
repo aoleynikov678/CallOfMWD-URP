@@ -10,6 +10,7 @@ namespace lab.mwd
     {
         private readonly PlayerInputActions playerInputActions;
         public Vector2 Move { get; private set; }
+        public Vector2 VerticalMove { get; private set; }
 
         private Vector2 move;
         private bool movePressed = false;
@@ -22,7 +23,9 @@ namespace lab.mwd
             playerInputActions.PlayerControls.MovePress.canceled += ctx => movePressed = false;
 
             playerInputActions.PlayerControls.Move.performed += ctx => move = ctx.ReadValue<Vector2>();
-                
+
+            playerInputActions.PlayerControls.VericalMove.performed += ctx => VerticalMove = ctx.ReadValue<Vector2>();
+            
             playerInputActions.Enable();
         }
 

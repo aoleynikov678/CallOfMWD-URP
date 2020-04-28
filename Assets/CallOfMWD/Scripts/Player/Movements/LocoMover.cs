@@ -4,9 +4,9 @@ namespace lab.mwd
 {
     public class LocoMover : Mover
     {
-        public override void Init(CharacterController characterController, GameObject head)
+        public override void Init(CharacterController characterController, IPositionProvider positionProvider)
         {
-            base.Init(characterController, head);
+            base.Init(characterController, positionProvider);
 
             SetupCharacterController();
         }
@@ -21,7 +21,7 @@ namespace lab.mwd
         private void SetupCharacterController()
         {
             // Get the head in local, playspace ground
-            float headHeight = Mathf.Clamp(head.transform.localPosition.y, 1, 2);
+            float headHeight = Mathf.Clamp(positionProvider.Transform.localPosition.y, 1, 2);
 
             characterController.height = headHeight;
 
@@ -31,8 +31,8 @@ namespace lab.mwd
             newCenter.y += characterController.skinWidth;
 
             // Let's move the capsule in local space as well
-            newCenter.x = head.transform.localPosition.x;
-            newCenter.z = head.transform.localPosition.z;
+            newCenter.x = positionProvider.Transform.localPosition.x;
+            newCenter.z = positionProvider.Transform.localPosition.z;
 
             // Apply
             characterController.center = newCenter;
@@ -42,7 +42,7 @@ namespace lab.mwd
         {
             // Apply the touch position to the head's forward Vector
             Vector3 direction = new Vector3(position.x, 0, position.y);
-            Vector3 headRotation = new Vector3(0, head.transform.eulerAngles.y, 0);
+            Vector3 headRotation = new Vector3(0, positionProvider.Transform.eulerAngles.y, 0);
             
             // Rotate the input direction by the horizontal head rotation
             direction = Quaternion.Euler(headRotation) * direction;

@@ -1,14 +1,9 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace lab.ui
 {
-    [Serializable]
-    public class SelectorEvent : UnityEvent<string, int> {}
-    
     public class LabUISelector : LabUIElementWithButtons<string>
     {
         [Header("Опции и описания")]
