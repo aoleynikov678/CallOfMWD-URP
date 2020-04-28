@@ -15,7 +15,7 @@ namespace lab.mwd
         private XRRig xrRig;
         
         private List<XRBaseControllerInteractor> interactors = new List<XRBaseControllerInteractor>();
-        
+
         private void Awake()
         {
             DontDestroyOnLoad(gameObject);
@@ -45,6 +45,7 @@ namespace lab.mwd
             PhotonNetwork.Destroy(gameObject);
         }
 
+        // TODO сделать тут коллбэк на переключение сцены
         private void Update()
         {
             foreach (var interactor in interactors)
