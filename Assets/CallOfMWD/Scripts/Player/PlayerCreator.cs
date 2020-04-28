@@ -9,18 +9,36 @@ namespace lab.mwd
     {
         [SerializeField] private string playerName;
         private NetworkPlayer networkPlayer;
-        private PhotonConnectionCallbacks photonConnectionCallbacks;
+        private PhotonConnectionCallbacks roomConnector;
         
         private IEnumerator Start()
         {
+            roomConnector = FindObjectOfType<PhotonConnectionCallbacks>();
+            roomConnector.OnRoomDisconnected += OnRoomDisconnected;
+            
             yield return new WaitUntil(() => PhotonNetwork.InRoom);
 
             networkPlayer = FindObjectsOfType<NetworkPlayer>().FirstOrDefault(p => p.photonView.IsMine);
 
             if (networkPlayer == null)
             {
-                PhotonNetwork.Instantiate(playerName, Vector3.zero, Quaternion.identity);
+                 var player = PhotonNetwork.Instantiate(playerName, Vector3.zero, Quaternion.identity);
+                 networkPlayer = player.GetComponent<NetworkPlayer>();
             }
         }
+        
+        private void OnDestroy()
+        {
+            if (roomConnector != null)
+            {
+                roomConnector.OnRoomDisconnected -= OnRoomDisconnected;
+            }
+        }
+
+        private void OnRoomDisconnected()
+        {
+            networkPlayer.DestroyPlayer();
+        }
+
     }
 }

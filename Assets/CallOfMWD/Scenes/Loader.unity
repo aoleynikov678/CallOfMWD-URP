@@ -3510,9 +3510,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1849851429}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 522273944d7547d297f9ea664e1d471a, type: 3}
+  m_Script: {fileID: 11500000, guid: 10cacb145fd848440b09cde2c74b0d35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  contentParent: {fileID: 1676467293}
+  roomEntry: {fileID: -1634367802727061839, guid: 3793c326683ee0d4d905ae63c65ea648,
+    type: 3}
 --- !u!1 &1893686734
 GameObject:
   m_ObjectHideFlags: 0

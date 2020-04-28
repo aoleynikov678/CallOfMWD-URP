@@ -10,7 +10,8 @@ namespace lab.mwd
         [SerializeField] private List<GameObject> destroyObjects = new List<GameObject>();
         [SerializeField] private XRRig xrRigPrefab;
         [SerializeField] private Avatar avatar;
-
+        
+        
         private XRRig xrRig;
         
         private void Awake()
@@ -32,6 +33,14 @@ namespace lab.mwd
                 avatar.SetRig(xrRig);
                 avatar.DisableRendering();
             }
+            
+
+        }
+
+        public void DestroyPlayer()
+        {
+            Destroy(xrRig.gameObject);
+            PhotonNetwork.Destroy(gameObject);
         }
     }
 }
