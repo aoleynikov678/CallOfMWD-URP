@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Photon.Pun;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -10,9 +11,10 @@ namespace lab.mwd
         [SerializeField] private List<GameObject> destroyObjects = new List<GameObject>();
         [SerializeField] private XRRig xrRigPrefab;
         [SerializeField] private Avatar avatar;
-        
-        
+
         private XRRig xrRig;
+        
+        private List<XRBaseControllerInteractor> interactors = new List<XRBaseControllerInteractor>();
         
         private void Awake()
         {
@@ -32,15 +34,26 @@ namespace lab.mwd
 
                 avatar.SetRig(xrRig);
                 avatar.DisableRendering();
-            }
-            
 
+                interactors = xrRig.GetComponentsInChildren<XRBaseControllerInteractor>().ToList();
+            }
         }
 
         public void DestroyPlayer()
         {
             Destroy(xrRig.gameObject);
             PhotonNetwork.Destroy(gameObject);
+        }
+
+        private void Update()
+        {
+            foreach (var interactor in interactors)
+            {
+                if (interactor.interactionManager == null)
+                {
+                    interactor.interactionManager = FindObjectOfType<XRInteractionManager>();
+                }
+            }
         }
     }
 }
