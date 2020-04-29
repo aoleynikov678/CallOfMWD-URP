@@ -5,14 +5,18 @@ namespace lab.mwd
     public abstract class Mover
     {
         protected CharacterController characterController;
-        protected GameObject head;
+        protected IPositionProvider positionProvider;
+        protected Camera camera;
         
-        public virtual void Init(CharacterController characterController, GameObject head)
+        public virtual void Init(CharacterController characterController, Camera camera, IPositionProvider positionProvider)
         {
             this.characterController = characterController;
-            this.head = head;
+            this.camera = camera;
+            this.positionProvider = positionProvider;
         }
 
         public abstract void Tick(Vector2 position, float speed, float gravityMultiplier);
     }
+
+
 }

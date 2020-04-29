@@ -1,12 +1,7 @@
-using System;
 using System.Collections.Generic;
-using UnityEngine.Events;
 
 namespace lab.ui
 {
-    [Serializable]
-    public class CheckboxEvent : UnityEvent<bool> {}
-    
     public class LabUICheckbox : LabUIElementWithButtons<bool>
     {
         public CheckboxEvent OnValueChanged;

@@ -9,27 +9,6 @@ using UnityEngine;
 
 namespace LuxURPEssentials
 {
-
-	[System.Serializable]
-    public enum RTSize {
-    	_128 = 128,
-        _256 = 256,
-        _512 = 512
-    }
-
-    [System.Serializable]
-    public enum RTFormat {
-    	ARGB32 = 0,
-        ARGBHalf = 1
-    }
-
-    [System.Serializable]
-    public enum GustMixLayer {
-    	Layer_0 = 0,
-        Layer_1 = 1,
-        Layer_2 = 2
-    }
-
 	[ExecuteInEditMode]
 	//[ExecuteAlways]
 	[RequireComponent(typeof(WindZone))]

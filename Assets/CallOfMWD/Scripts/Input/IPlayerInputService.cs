@@ -7,5 +7,6 @@ namespace lab.mwd
     public interface IPlayerInputService : IGameService
     {
         Vector2 Move { get; }
+        Vector2 VerticalMove { get; }
     }
 }
