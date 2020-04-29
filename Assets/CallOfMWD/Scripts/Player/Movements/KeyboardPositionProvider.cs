@@ -1,6 +1,9 @@
-﻿using lab.core;
+﻿using System.Collections;
+using lab.core;
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
 using UnityEngine.XR.Interaction.Toolkit;
+
 
 namespace lab.mwd
 {
@@ -9,26 +12,21 @@ namespace lab.mwd
         private IPlayerInputService playerInputService;
         public Transform Transform { get; private set; }
 
-        private Transform cameraTransform;
+        private float speedH = 2.0f;
+        private float speedV = 2.0f;
 
-        private XRRig rig;
+        private float yaw = 0.0f;
+        private float pitch = 0.0f;
         
-        public void Init(Transform parent)
+        public void Init(Transform parent, Camera mainCamera)
         {
             playerInputService = ServiceLocator.Current.Get<IPlayerInputService>();
-            Transform = parent;
-            cameraTransform = parent.gameObject.GetComponent<XRRig>().cameraGameObject.transform;
-
-            rig = parent.gameObject.GetComponent<XRRig>();
-            
-            rig.MatchRigUpCameraForward(cameraTransform.up, cameraTransform.forward);
-            
+            Transform = mainCamera.transform;
         }
 
+        // TODO take data from playerInputService
         public void Tick()
         {
-            //cameraTransform.localPosition = Vector3.zero;
-
             if (Input.GetKey(KeyCode.DownArrow))
             {
                 Transform.position -= new Vector3(0, 0.05f, 0);
@@ -37,17 +35,12 @@ namespace lab.mwd
             {
                 Transform.position += new Vector3(0, 0.05f, 0);
             }
-            else if (Input.GetKey(KeyCode.LeftArrow))
-            {
-                
-                rig.RotateAroundCameraPosition(Vector3.up, -100 * Time.deltaTime);
-                //Transform.RotateAround(rotateTarget.transform.position, rotationMask, -rotationSpeed * Time.deltaTime);
-            }
-            else if (Input.GetKey(KeyCode.RightArrow))
-            {
-                rig.RotateAroundCameraPosition(Vector3.up, 100 * Time.deltaTime);
-                //Transform.RotateAround(rotateTarget.transform.position, rotationMask, rotationSpeed * Time.deltaTime);
-            }
+
+            yaw += speedH * Input.GetAxis("Mouse X");
+            pitch -= speedV * Input.GetAxis("Mouse Y");
+            
+            Transform.eulerAngles = new Vector3(pitch, yaw, 0);
         }
+
     }
 }

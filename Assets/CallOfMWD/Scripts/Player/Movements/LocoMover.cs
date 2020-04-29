@@ -4,10 +4,9 @@ namespace lab.mwd
 {
     public class LocoMover : Mover
     {
-        public override void Init(CharacterController characterController, IPositionProvider positionProvider)
+        public override void Init(CharacterController character, Camera cam, IPositionProvider provider)
         {
-            base.Init(characterController, positionProvider);
-
+            base.Init(character, cam, provider);
             SetupCharacterController();
         }
 

@@ -6,7 +6,7 @@ namespace lab.mwd
     public class XRPositionProvider : IPositionProvider
     {
         public Transform Transform { get; private set; }
-        public void Init(Transform parent)
+        public void Init(Transform parent, Camera mainCamera)
         {
             Transform = parent.gameObject.GetComponent<XRRig>().cameraGameObject.transform;
         }
