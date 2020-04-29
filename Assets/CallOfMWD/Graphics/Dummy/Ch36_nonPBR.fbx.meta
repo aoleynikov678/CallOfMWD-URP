@@ -1,19 +1,37 @@
 fileFormatVersion: 2
-guid: df37d448e3d5d27459577edfbade4487
+guid: 284e791d4efccba42bdcc9cc0a3353ab
 ModelImporter:
   serializedVersion: 19300
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -203655887218126122
+    second: mixamo.com
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: WhiteHart_final_u1_v1
-    second: {fileID: 2100000, guid: a2fb3b8cd057b204d809f48172306863, type: 2}
+      name: Ch36_Body
+    second: {fileID: 2100000, guid: f37b03e3a1720734dad77e1a29481946, type: 2}
   - first:
-      type: UnityEngine:Material
+      type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: WhiteHart_final_u2_v1
-    second: {fileID: 2100000, guid: 99e79a40aa59576409a0b01f24f34460, type: 2}
+      name: Ch36_1001_Diffuse
+    second: {fileID: 2800000, guid: 6fac20c72f1da0c40aa5292006de9c27, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ch36_1001_Glossiness
+    second: {fileID: 2800000, guid: d559c166e4d00a34ebd58a4a5a3a62ac, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ch36_1001_Normal
+    second: {fileID: 2800000, guid: ccf825adbac555d4e86dd74c24a3e0b4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ch36_1001_Specular
+    second: {fileID: 2800000, guid: b0183ee9cf734894e871de3aa578b1ad, type: 3}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -44,7 +62,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.17
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -90,7 +108,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.17
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
