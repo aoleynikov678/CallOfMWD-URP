@@ -1,9 +1,5 @@
-﻿using System.Collections;
-using lab.core;
+﻿using lab.core;
 using UnityEngine;
-using UnityEngine.InputSystem.XR;
-using UnityEngine.XR.Interaction.Toolkit;
-
 
 namespace lab.mwd
 {
@@ -22,6 +18,10 @@ namespace lab.mwd
         {
             playerInputService = ServiceLocator.Current.Get<IPlayerInputService>();
             Transform = mainCamera.transform;
+
+            var curPos = Transform.position;
+            curPos.y = 2;
+            Transform.position = curPos;
         }
 
         // TODO take data from playerInputService
