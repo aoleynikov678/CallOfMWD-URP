@@ -1,6 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
+#if UNITY_EDITOR
 namespace LuxURPEssentials
 {
     [CustomPropertyDrawer(typeof(LuxURP_HelpBtn))]
@@ -34,3 +35,4 @@ namespace LuxURPEssentials
         }
     }
 }
+#endif
